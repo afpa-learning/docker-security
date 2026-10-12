@@ -1,33 +1,4 @@
-# Progression AIS
-
-Découverte Docker :
-1. Découverte des principes de base :
-  - de l'image au conteneur
-  - réseau et DNS interne
-  - customisation d'une image Docker
-  - pulbication d'une image Docker
-
-2. Initiation à la composition Docker :
-  - composition sur un seul réseau
-  - segmentation réseau avec Docker
-```text
-| Réseau "frontend"  | Réseau "backend" |
-| reverse proxy <-> app <->  DB
-```
-La BDD jamais exposée en directement, injoignable depuis le proxy.o
-  - mise en place des recommandations ANSSI/CIS (Center for Internet Security) -> durcissement d'images Docker
-
-3. Composition avancée
-  - mise en place d'un conteneur Wireguard pour rejoindre le LAN
-
-Pour aller plus loin :
-  - scan des CVE des images
-  - mise en place de Grafana pour superviser l'infrastructure
-  - mise en place d'un SOC (Security Operations Center) basé sur :
-    - un IDS/IPS réseau (peut-être Suricata ?)
-    - un gestionnaire de collecte de logs et évènements réseau : Wazuh (peut recevoir les logs du reverse proxy et de l'application)
-
-# Docker
+# Docker et la sécurité
 
 ## Introduction
 
