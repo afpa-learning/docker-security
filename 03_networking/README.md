@@ -24,6 +24,7 @@ Voici un schéma récapitulatif de cet approche :
 >
 > La publication d'un port (avec redirection) contourne les règles de pare-feu de l'hôte.
 
+
 ## Création de réseaux
 
 La création de réseaux peut s'effectuer dans le fichier de composition `compose.yml` en ajoutant les lignes suivantes :
@@ -118,6 +119,28 @@ Plus d'informations sur la configuration IPAM disponible [ici](https://docs.dock
 > Modifiez votre configuration "compose.yml" pour mettre en place les sous-réseaux "frontend" et "backend" (pensez à bien supprimer votre ancienne composition grâce à `docker compose down`).
 >
 > Une fois la nouvelle composition démarrée, listez les adresses IP des conteneurs (sous Linux grâce à la commande `ip a`).
+
+## Recommandation de l'ANSSI
+
+Dans sa fiche technique portant sur les recommandations de sécurité (disponible [ici](https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker)) l'ANSSI préconise les sécurisation suivantes :
+
+```text
+R3 : Interdire la connexion du conteneur au réseau bridge docker0
+Le service Docker doit être configuré pour démarrer un conteneur sans le connecter, par défaut, au réseau bridge, docker0, avec l’option --bridge=none (en ligne de commande ou dans le fichier de configuration).
+```
+
+```text
+R4 : Isoler l'interface réseau de l'hôte
+Chaque conteneur doit être démarré sans partager l’interface réseau de l’hôte. L’option `--network host` ne doit pas être utilisée.
+```
+
+```text
+R5 : Créer un réseau dédié pour chaque connexion
+Si le conteneur doit « exposer » un port de l’interface réseau de l’hôte ou doit être connecté à un ou plusieurs autres conteneurs, un réseau dédié doit être créé pour
+chaque connexion.
+```
+
+En ajoutant des réseau explicitement dans la configuration votre composition suit ces préconisations.
 
 ## Ajout d'un reverse-proxy
 

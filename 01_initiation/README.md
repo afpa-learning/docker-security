@@ -370,7 +370,7 @@ Le schéma de principe ci-dessous illustre la redirection :
 > Il est possible d'utiliser un navigateur web ou un outils de requêtage tel que `curl`.
 >
 > Commande `curl` utilisable :
-> curl http://localhost:8081/health
+> `curl http://localhost:8081/health`
 
 > [!TIP]
 > Pour le moment nous utilisons des conteneurs uniques, par la suite vous établirez des **compositions** de plusieurs conteneurs.
