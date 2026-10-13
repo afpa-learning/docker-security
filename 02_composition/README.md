@@ -111,3 +111,116 @@ services:
 ```
 
 Ce fichier fait référence à des variables d'environnement telles que `${MARIADB_DATABASE}`, ces variables doivent être déclarées dans un fichier `.env` situé dans le même dossier que `compose.yml`.
+
+### Démarrage de la composition
+
+Une fois les fichiers de configurations créés il est possible de démarrer la composition avec la commande suivante :
+```sh
+docker compose up
+```
+
+Il est aussi possible de récupérer la main sur son terminal en effectuant la commande :
+```sh
+docker compose up -d
+```
+
+Pour arrêter et supprimer les conteneurs d'une composition faire :
+```sh
+docker compose down
+```
+
+> [!IMPORTANT]
+> Lancez la composition et accédez à l'application DVWA.
+>
+> Pour se connecter au site :
+> - login : **admin**
+> - mot de passe : **password**
+>
+> Après la connexion il faudra probablement ré-initialiser la base de données via l'interface web.
+
+### Interagir avec un conteneur
+
+Il est possible d'intéragir avec des conteneurs en cours d'exécution en utilisant la commande :
+```sh
+docker exec
+```
+
+Voici quelques exemples de ce qu'il est possible de faire avec cette commande :
+- `docker exec <nom-conteneur> ls /etc` : lance la commande `ls /etc` dans le conteneur
+- `docker exec -it <nom-conteneur> /bin/bash` : `-i` permet d'activer le mode interactif, `-t` permet d'allouer un pseudo-TTY (autrement dit : obtenir une session de terminal)
+- `docker exec -u root <nom-conteneur> touch /etc/file.conf` : `-u` permet de lancer la commande en choisissant un utilisateur
+
+La suite vous permettra d'explorer le contenu du conteneur applicatif.
+
+> [!IMPORTANT]
+> Accédez à une terminal du conteneur applicatif avec la commande suivante :
+> `docker exec -it <nom-conteneur> /bin/bash`
+
+Une fois dans le conteneur vous pourrez récupérer les informations système avec la commande :
+```sh
+cat /etc/os-release
+```
+
+> [!IMPORTANT]
+> Sur quelle distribution Linux est basé le conteneur ?
+
+#### Changement de date
+
+La commande `date` nous donne... la date (on arrête pas le progrès, que vouslez-vous). Cependant celle-ci est basée sur un fuseau horaire différent du notre.
+
+Debian utilise la variable d'environnement `TZ` (pour "Timezone") afin de retrouver la date correcte.
+
+> [!IMPORTANT]
+> Changez la variable d'environnement "TZ" afin d'obtenir la date correcte :
+> ```sh
+> $ export TZ="Europe/Paris"
+> ```
+
+#### Étude des logs
+
+Il est important de considérer les conteneurs comme un **processus isolé** et non pas comme un OS complet.
+
+Le conteneur DVWA peut-être vu comme un processus **apache2** hébergant une application PHP.
+Le serveur **apache2** écrit, par défaut, ses logs dans les fichiers contenus dans `/var/log/apache2/`.
+
+Habituellement, l'affichage des logs se ferait avec une commande telle que :
+```sh
+tail -f /var/log/apache/access.log
+```
+
+> [!IMPORTANT]
+> Essayez cette commande dans le conteneur, que se passet-t-il ?
+>
+> Effectuez les actions suivantes pour comprendre la situation :
+> - déplacement dans le dossier `/var/log/apache2/`
+> - affichage détaillé du contenu du dossier
+>
+> Qu'observez-vous sur les fichiers `access.log`, `error.log` et `other_vhosts_access.log` ?
+
+Les logs d'apache2 sont redirigés vers la sortie standard (`stdout`) et la sortie d'erreur (`stderr`).
+
+De ce fait les logs ne sont plus directement visible dans les conteneurs **mais accessible via Docker**.
+
+Pour accéder aux logs vous pourrez effectuer la commande suivante :
+```sh
+docker logs  -f <nom-conteneur>
+```
+
+> [!TIP]
+> Par défaut, Docker récupère les données envoyées à `stdout` et `stderr` et les envoie à ce qui est appelé un "logging driver".
+>
+> Le "logging driver" permet de choisir ce que qui est fait des logs.
+>
+> Il est possible de d'afficher le "logging driver" utilisé pour un conteneur avec la commande suivante :
+> ```sh
+> docker inspect -f '{{.HostConfig.LogConfig.Type}}' <nom-container>
+> ```
+>
+> Il existe plusieurs types de "logging driver", voici une liste non exhaustive :
+> - `json-file` : transformation des logs en fichier json accessible sur l'hôte (souvent par défaut)
+> - `local` : sauvegarde des logs comme ils sont lus sur les sorties standards (souvent plus efficace que `json-file`)
+> - `journald` : envoie des logs système journald (issu de "systemd") de l'hôte Linux
+> - `syslog` : envoie des logs au système `syslog` LInux
+> - `fluentd`, `splunk`, `awslogs`, `gpclogs` : envoie des logs aux outils de journalisation centralisés pour gestion et analyse
+
+Par la suite vous pourrez mettre en place un système de centralisation et d'analyse de logs.

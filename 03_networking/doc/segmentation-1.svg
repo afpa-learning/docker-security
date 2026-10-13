@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 876.6134 131"
+   width="876.6134"
+   height="131"
+   id="svg24"
+   sodipodi:docname="segmentation-1.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview24"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.63281414"
+     inkscape:cx="409.28289"
+     inkscape:cy="155.65392"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs1" />
+  <g
+     class="entity"
+     data-qualified-name="nav"
+     id="ent0001"
+     data-source-line="10"
+     transform="translate(-7.1484375,-43.000004)" />
+  <g
+     id="g24"
+     transform="translate(-7.1484375,-43.000004)">
+    <rect
+       x="222.44975"
+       y="44.079762"
+       width="193.7755"
+       height="128.84048"
+       rx="11.673223"
+       ry="9.9876337"
+       fill="#ffe0b2"
+       stroke="#181818"
+       stroke-width="2.15951"
+       id="rect1" />
+    <text
+       x="230.31"
+       y="59"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text2">frontend</text>
+    <text
+       x="287.07999"
+       y="59"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text3">  172.20.1.0/24</text>
+    <text
+       x="259.48001"
+       y="75"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text4">zone exposée</text>
+    <rect
+       x="453.44879"
+       y="44.375324"
+       width="428.93774"
+       height="128.24936"
+       rx="18.730906"
+       ry="10.098375"
+       fill="#c8e6c9"
+       stroke="#181818"
+       stroke-width="2.75064"
+       id="rect4" />
+    <text
+       x="690.28333"
+       y="59"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text5">backend</text>
+    <text
+       x="747.0733"
+       y="58.928223"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text6">  172.20.2.0/24</text>
+    <text
+       x="658.45331"
+       y="75"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-weight="bold"
+       font-family="Arial"
+       id="text7">internal : ni sortie, ni port publié</text>
+    <path
+       d="m 708.16333,99.912998 c 0,-10 56.68,-10 56.68,-10 0,0 56.69,0 56.69,10 V 140.913 c 0,10 -56.69,10 -56.69,10 0,0 -56.68,0 -56.68,-10 V 99.912998"
+       fill="#f1f1f1"
+       stroke="#181818"
+       stroke-width="0.5"
+       id="path10" />
+    <path
+       d="m 708.16333,99.912998 c 0,10.000002 56.68,10.000002 56.68,10.000002 0,0 56.69,0 56.69,-10.000002"
+       fill="#00000000"
+       stroke="#181818"
+       stroke-width="0.5"
+       id="path11"
+       style="fill:none" />
+    <text
+       x="718.16333"
+       y="126.91299"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-family="Arial"
+       id="text11">db</text>
+    <text
+       x="718.16333"
+       y="142.91299"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-family="Arial"
+       id="text12">MariaDB :3306</text>
+    <circle
+       cx="42.18"
+       cy="88.5"
+       r="8"
+       fill="#f1f1f1"
+       stroke="#181818"
+       stroke-width="0.5"
+       id="circle12" />
+    <path
+       d="m 42.18,96.5 v 27 m -13,-19 h 26 m -13,19 -13,15 m 13,-15 13,15"
+       fill="#00000000"
+       stroke="#181818"
+       stroke-width="0.5"
+       id="path12" />
+    <text
+       x="6"
+       y="153"
+       font-size="14px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-family="Arial"
+       id="text13">Navigateur</text>
+    <g
+       class="entity"
+       data-qualified-name="app"
+       id="ent0004"
+       data-source-line="16"
+       transform="translate(-177.66667,-5.5870021)">
+      <polygon
+         points="512.37,165 512.37,97 522.37,87 702.52,87 702.52,155 692.52,165 "
+         fill="#fff59d"
+         stroke="#181818"
+         stroke-width="0.5"
+         id="polygon14" />
+      <line
+         x1="692.52002"
+         y1="97"
+         x2="702.52002"
+         y2="87"
+         stroke="#181818"
+         stroke-width="0.5"
+         id="line14" />
+      <line
+         x1="512.37"
+         y1="97"
+         x2="692.52002"
+         y2="97"
+         stroke="#181818"
+         stroke-width="0.5"
+         id="line15" />
+      <line
+         x1="692.52002"
+         y1="97"
+         x2="692.52002"
+         y2="165"
+         stroke="#181818"
+         stroke-width="0.5"
+         id="line16" />
+      <text
+         x="527.37"
+         y="120"
+         font-size="14px"
+         fill="#000000"
+         xml:space="preserve"
+         style="white-space:pre"
+         font-weight="bold"
+         font-family="Arial"
+         id="text16">app</text>
+      <text
+         x="527.37"
+         y="136"
+         font-size="14px"
+         fill="#000000"
+         xml:space="preserve"
+         style="white-space:pre"
+         font-family="Arial"
+         id="text17">DVWA :80</text>
+      <text
+         x="527.37"
+         y="152"
+         font-size="14px"
+         fill="#000000"
+         xml:space="preserve"
+         style="white-space:pre"
+         font-family="Arial"
+         id="text18">rattachée aux 2 réseaux</text>
+    </g>
+    <path
+       d="m 78.61,126.21983 c 66.13838,0 174.54544,0 248.37166,0"
+       fill="none"
+       stroke="#181818"
+       stroke-width="1.19986"
+       id="path18" />
+    <polygon
+       points="256.13,126 247.13,122 251.13,126 247.13,130 "
+       fill="#181818"
+       stroke="#181818"
+       stroke-width="1"
+       id="polygon18"
+       transform="translate(77.431899,0.21983)" />
+    <text
+       x="114.4"
+       y="107"
+       font-size="13px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-family="Arial"
+       id="text19">127.0.0.1:8080</text>
+    <text
+       x="109.37"
+       y="122"
+       font-size="13px"
+       fill="#000000"
+       xml:space="preserve"
+       style="white-space:pre"
+       font-family="Arial"
+       id="text20">(seul port publié)</text>
+    <g
+       class="link"
+       data-entity-1="ent0004"
+       data-entity-2="ent0006"
+       id="lnk9"
+       data-source-line="24"
+       data-link-type="dependency"
+       transform="translate(-177.66667,-5.5870021)">
+      <path
+         d="m 703,126 c 59.04,0 128.03,0 177.82,0"
+         fill="none"
+         stroke="#181818"
+         stroke-width="1"
+         id="path22" />
+      <polygon
+         points="876.82,122 880.82,126 876.82,130 885.82,126 "
+         fill="#181818"
+         stroke="#181818"
+         stroke-width="1"
+         id="polygon22" />
+      <text
+         x="747.59998"
+         y="107"
+         font-size="13px"
+         fill="#000000"
+         xml:space="preserve"
+         style="white-space:pre"
+         font-family="Arial"
+         id="text23">3306/tcp</text>
+      <text
+         x="733.52002"
+         y="122"
+         font-size="13px"
+         fill="#000000"
+         xml:space="preserve"
+         style="white-space:pre"
+         font-family="Arial"
+         id="text24">(via backend)</text>
+    </g>
+  </g>
+</svg>

@@ -8,7 +8,7 @@
 
 Si tout se passe bien vous devriez obtenir un résultat similaire à la capture suivante :
 
-![Mon premier Docker](../images/docker-hello-world.PNG)
+![Mon premier Docker](doc/img/docker-hello-world.PNG)
 
 Attardons nous quelques instants sur le détails des étapes effectuées par Docker :
 1. Le client Docker (utilisé en console Powershell) est entré en contact avec le "Docker daemon" (aussi appelé **"moteur Docker"**)
@@ -20,12 +20,12 @@ Attardons nous quelques instants sur le détails des étapes effectuées par Doc
 Il est possible d'analyser le contenu d'un container grâce à l'onglet "Containers" de Docker Desktop.
 Le gif suivant présente la façon d'accéder aux "logs" d'un conteneur (vous remarquerez qu'il s'agit de ce qui est redirigé vers la console Powershell).
 
-![Logs d'un conteneur](../images/container-details.gif)
+![Logs d'un conteneur](doc/img/container-details.gif)
 
 
 Les dossiers et fichiers contenus dans un conteneur peuvent également être visibles via le client Docker :
 
-![Fichiers d'un conteneur](../images/container-details-file.gif)
+![Fichiers d'un conteneur](doc/img/container-details-file.gif)
 
 Dans le cas du conteneur basé sur une image "hello-world" le fichier contient une partie de code non compréhensible mais également le fameux texte affiché en console.
 
@@ -46,6 +46,7 @@ Vous trouverez ici les commandes les plus utilisées.
 Commande : `docker images`
 
 #### Suppression d'une image
+
 ```admonish info
 Commande : `docker image rm <nom_image>`
 ```
@@ -87,6 +88,7 @@ Dans le cas de l'image [hibiki31/whalesay](https://hub.docker.com/r/docker/whale
 > Que se passe-t-il ?
 
 Pour faire parler la baleine, vous pouvez ajouter une chaîne de caractère qui sera utilisée lors de l'instanciation du conteneur, par exemple de la façon suivante :
+
 ```bash
 docker run hibiki31/whalesay cowsay "Booya!"
 ```
@@ -230,6 +232,7 @@ Voici un code simpliste pouvant être utilisé i(veillez à répondre aux `TODOs
 ### Configuration `nginx`
 
 Vous pourrez utiliser le fichier de configuration suivant (attention de bien compléter les TODO) :
+
 ```conf
 # Les processus "worker" qui traitent les requêtes tournent sous cet utilisateur
 user  nginx;
@@ -359,7 +362,7 @@ Il est important de notre la **redirection de port**, ceci est lié au fait que 
 
 Le schéma de principe ci-dessous illustre la redirection :
 
-![Redirection de port Docker pour accès serveur web](./doc/redirection-port.png)
+![Redirection de port Docker pour accès serveur web](./doc/img/redirection-port.png)
 
 > [!IMPORTANT]
 > Accéder aux pages fournies pas le serveur web nouvellement mis en place avec un client HTTP.

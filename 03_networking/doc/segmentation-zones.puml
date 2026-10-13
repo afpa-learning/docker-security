@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam rectangle {
+  RoundCorner 20
+  BorderThickness 2
+}
+
+actor "Navigateur" as nav
+
+rectangle "**frontend**  172.20.1.0/24\nzone exposée" as front #FFE0B2 {
+  node "proxy\nnginx :443" as proxy
+}
+
+node "**app**\nDVWA :80\nrattachée aux 2 réseaux" as app #FFF59D
+
+rectangle "**backend**  172.20.2.0/24\ninternal : ni sortie, ni port publié" as back #C8E6C9 {
+  database "db\nMariaDB :3306" as db
+}
+
+nav --> proxy : "127.0.0.1:443\n(seul port publié)"
+proxy --> app : "80/tcp\n(via frontend)"
+app --> db : "3306/tcp\n(via backend)"
+@enduml
