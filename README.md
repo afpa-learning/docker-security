@@ -25,6 +25,8 @@ Compétences abordées :
 3. Publication d'une image
 4. Configuration d'une image de serveur web `nginx`
 
+---
+
 ## Phase 2 : déploiement d'un service
 
 ### Objectif
@@ -42,6 +44,8 @@ Jusqu'à présent des conteneurs uniques ont été mis en place, l'objectif de c
 1. prise en main de la composition Docker applicative
 2. modification de la configuration de `nginx` pour `reverse-proxy`
 
+---
+
 ## Phase 3 : Segmentation en sous-réseaux
 
 ### Objectif
@@ -53,7 +57,23 @@ Le RSSI exige que la base de données ne soit pas joignable de l'extérieur, il 
 1. Segmentation en réseaux `Docker` pour suivre les recommandations de l'ANSSI
 2. Protection de la BDD avec publication de ports minimale
 
-## Phase 4 : durcissement des images
+---
+
+## Phase 4 : Exploitation du service
+
+### Objectif
+
+Pour être en accord avec le SLA (["Service-Level Agreement" ou "Accord de niveau de sécurité"](https://fr.wikipedia.org/wiki/Service-level_agreement)) il vous est demandé de mettre en place une sauvegarde des données de certains conteneurs.
+
+### Travail à effectuer
+
+1. mise en place de la persistence des données de conteneurs
+2. configuration du redémarrage automatique
+3. ajout d'indicateurs de disponibilités (healthcheck)
+
+---
+
+## Phase 5 : durcissement des images
 
 ### Mise en situation
 
@@ -63,13 +83,7 @@ Toujours dans une perspective de sécurisation, il vous est demandé de vous ass
 
 1. Application des recommandations de sécurité de l'ANSSI
 
-## Phase 5 : Exploitation du service
-
-### Objectif
-
-Pour être en accord avec le SLA (["Service-Level Agreement" ou "Accord de niveau de sécurité"](https://fr.wikipedia.org/wiki/Service-level_agreement)) il vous est demandé de mettre en place une sauvegarde des données de certains conteneurs.
-
-### Travail à effectuer
+---
 
 ## Phase 6 : distribution de l'image Docker
 
