@@ -21,6 +21,46 @@ Il est beaucoup utilisé pour créer des "stacks" d'applications complètes, par
 
 ## Plusieurs services : fichier de composition
 
+### Écriture d'une composition
+
+Les fichiers de configuration « compose.yml » sont au format YAML et vont avoir pour objectif de décrire la configuration de tous les conteneurs que nous souhaitons instancier.
+- Parmi les configurations les plus utilisées on retrouve :
+- Les images à utiliser pour pouvoir instancier les conteneurs ;
+- Le nom du conteneur à instancier ;
+- Les volumes à monter pour les conteneurs ;
+- Les redirections de port à effectuer.
+
+Voici un exemple de la structuration du fichier YAML d'un fichier `compose.yml` :
+```yml
+services:
+    nom-service-1:
+        container_name: <nom-conteneur>
+        # Force le conteneur à se redémarrer s'il est arrêté autrement que manuellement
+        # Démarre automatiquement au lancement du "Docker engine"
+        restart: 'always'
+        # Indication du sous-dossier contenant le Dockerfile
+        build:
+            context: <chemin-vers-sous-dossier>
+        #
+        # Suite du paramétrage service 1
+        #
+    nom-service-2:
+        container_name: <nom-conteneur>
+        # Force le conteneur à se redémarrer s'il est arrêté autrement que manuellement
+        # Démarre automatiquement au lancement du "Docker engine"
+        restart: 'always'
+        # Indication du sous-dossier contenant le Dockerfile
+        build:
+            context: <chemin-vers-sous-dossier>
+        #
+        # Suite du paramétrage service 2
+        #
+```
+
+> [!TIP]
+> La structuration YAML consiste en un ensemble de blocks associés à des entrées « clef-valeur » permettant de préciser la configuration.
+
+
 ### Objectif
 
 > [!WARNING]
@@ -119,7 +159,7 @@ Une fois les fichiers de configurations créés il est possible de démarrer la 
 docker compose up
 ```
 
-Il est aussi possible de récupérer la main sur son terminal en effectuant la commande :
+Il est aussi possible de lancer la composition **ET récupérer la main** sur son terminal en effectuant la commande :
 ```sh
 docker compose up -d
 ```
@@ -189,7 +229,7 @@ tail -f /var/log/apache/access.log
 ```
 
 > [!IMPORTANT]
-> Essayez cette commande dans le conteneur, que se passet-t-il ?
+> Essayez cette commande dans le conteneur, que se passe-t-il ?
 >
 > Effectuez les actions suivantes pour comprendre la situation :
 > - déplacement dans le dossier `/var/log/apache2/`
@@ -201,7 +241,7 @@ Les logs d'apache2 sont redirigés vers la sortie standard (`stdout`) et la sort
 
 De ce fait les logs ne sont plus directement visible dans les conteneurs **mais accessible via Docker**.
 
-Pour accéder aux logs vous pourrez effectuer la commande suivante :
+Pour accéder aux logs vous pourrez effectuer la commande suivante **sur la machine hôte** :
 ```sh
 docker logs  -f <nom-conteneur>
 ```

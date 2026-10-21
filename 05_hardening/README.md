@@ -118,6 +118,7 @@ services:
 - si le conteneur ne démarre pas -> l'erreur donne probablement des informations sur la capacité manquante
 - si le conteneur démarre -> essayer de supprimer une capacité
 
+Pour ajouter des "capabilities" vous pourrez utiliser un configuration telle que :
 ```yml
   reverse-proxy:
     # Gestion des capacités Linux
@@ -169,7 +170,6 @@ services:
 
 > [!IMPORTANT]
 > Après avoir ajouté la configuration, essayez d'écrire dans un dossier non monté via `tmpfs`.
-**Preuve :**
 
 > [!TIP]
 > Si le conteneur ne démarre plus, l'erreur indique  dans quel dossier il veut écrire : il faut alors l'ajouter à `tmpfs`.

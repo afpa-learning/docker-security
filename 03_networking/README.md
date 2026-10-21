@@ -4,7 +4,7 @@ Une des règles fondamentale de la sécurité est : la base de données ne doit 
 
 Comme dans une infrastructure traditionnellei (VLAN, pare-feu) il va falloir segmenter le réseau afin de limiter la surface d'attaque si le réseau exposé est conpromis.
 
-> [!INFO]
+> [!TIP]
 > Jusqu'à présent aucun réseau n'a été configuré dans les fichiers de configuration Docker.
 > 
 > Dans cette configuration Docker crée un réseau "bridge" avec la machine hôte et tous les conteneurs se retrouvent sur le même réseau.
@@ -140,7 +140,7 @@ Si le conteneur doit « exposer » un port de l’interface réseau de l’hôte
 chaque connexion.
 ```
 
-En ajoutant des réseau explicitement dans la configuration votre composition suit ces préconisations.
+En ajoutant des réseaux explicitement dans la configuration votre composition suit ces préconisations.
 
 ## Ajout d'un reverse-proxy
 
