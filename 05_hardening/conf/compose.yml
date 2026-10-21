@@ -16,7 +16,7 @@ services:
     tmpfs:
       - /var/cache/nginx:size=32m
       - /etc/nginx/conf.d:size=1m
-      - /run:size=1
+      - /run:size=1m
     volumes:
       - ./reverse-proxy/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./reverse-proxy/server.crt:/etc/nginx/certs/server.crt:ro
