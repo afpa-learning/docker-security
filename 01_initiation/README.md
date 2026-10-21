@@ -52,7 +52,7 @@ Commande : `docker image rm <nom_image>`
 ```
 
 > [!IMPORTANT]
-Essayez de supprimer l'image intitulée "hello-world". Que se passe t-il ?
+> Essayez de supprimer l'image intitulée "hello-world". Que se passe t-il ?
 
 Pour arriver à vos fins, il vous faudra donc utiliser une autre commande :
 ```
@@ -278,7 +278,7 @@ http {
     # Déclaration d'un serveur répondant à 80
     server {
         # Écoute sur le port 80 (attention, non sécurisé)
-        lishttps://nginx101.com/directives/http/ten 80;
+        lisen 80;
         server_name _;
 
         root  /usr/share/nginx/html;
