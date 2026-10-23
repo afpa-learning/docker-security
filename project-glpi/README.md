@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Créer une composition Docker permettant d'héberger GLPI .
+Créer une composition Docker permettant d'héberger [GLPI](https://www.glpi-project.org/en/).
 
 Le déploiement devra être fonctionnel, sécurisé et facile à maintenir.
 
