@@ -188,3 +188,10 @@ Il est installable ou lui même utilisable en version Docker, il vous est propos
 
 Appliquer les mêmes mesures aux services `db` puis `app`.
 
+### Consultation des recommandations OWasp
+
+L'organisation OWasp propose également des recommandations de sécurité disponibles [ici](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html).
+
+> [!IMPORTANT]
+> Les recommandations sont-elles similaires à celle de l'ANSSI ?
+> Quelles seraient les différences ?
