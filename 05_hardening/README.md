@@ -178,5 +178,13 @@ services:
 
 ## Pour aller plus loin
 
+### Trivy
+
+[Trivy](https://trivy.dev/) est un outil d'analyse de vulnérabilités d'images Docker.
+
+Il est installable ou lui même utilisable en version Docker, il vous est proposé de scanner les images Docker utilisées dans votre composition, vous pourrez vous inspirer de la ressource suivante pour le faire : [tutoriel Trivy](https://oneuptime.com/blog/post/2026-01-27-trivy-container-scanning/view)
+
+### Durcissement des autres images de la composition
+
 Appliquer les mêmes mesures aux services `db` puis `app`.
 
